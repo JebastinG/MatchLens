@@ -90,7 +90,7 @@ def validate_llm_requirements(raw: object, job_text: str, limit: int) -> tuple[l
         if not isinstance(item, dict) or not isinstance(item.get("text"), str):
             dropped += 1
             continue
-        text = item["text"].strip()
+        text = re.sub(r"</?\s*(excerpt|requirement|job_text)[^>]*>", "", item["text"], flags=re.I).strip()
         toks = tokenize(text)
         grounded = bool(toks) and sum(t in job_tokens for t in toks) / len(toks) >= 0.7
         if not (4 <= len(text) <= 300) or not grounded:

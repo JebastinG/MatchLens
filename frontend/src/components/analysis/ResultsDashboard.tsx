@@ -34,7 +34,7 @@ function RequirementCard({ req, onDismiss }: { req: Requirement; onDismiss: (id:
       <div className="req-head">
         <div>
           <p className="req-meta">Requirement {req.ordinal}{req.category !== 'unspecified' ? ` · ${req.category}` : ''}</p>
-          <h4 className="req-text">{req.text}</h4>
+          <h4 className="req-text">{req.text.replace(/<\/?(excerpt|requirement)>/gi, '')}</h4>
         </div>
         <StatusBadge status={a.status} />
       </div>
