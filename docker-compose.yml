@@ -1,0 +1,23 @@
+# Optional: PostgreSQL only. (The API, worker and frontend run on the host.)
+# NOTE: written for Docker Desktop on Windows but NOT executed during development of this project.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set in .env}
+      POSTGRES_DB: matchlens
+      OWNER_DB_PASSWORD: ${OWNER_DB_PASSWORD:?set in .env}
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?set in .env}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - matchlens_pg:/var/lib/postgresql/data
+      - ./database/init/docker-init.sh:/docker-entrypoint-initdb.d/10-roles.sh:ro
+      - ./database/init/01-roles.sql:/sql/01-roles.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d matchlens"]
+      interval: 5s
+      retries: 10
+volumes:
+  matchlens_pg:

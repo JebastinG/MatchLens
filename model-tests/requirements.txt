@@ -1,0 +1,2 @@
+# For model-tests/.venv ONLY (your existing environment already has sentence-transformers).
+sentence-transformers>=3

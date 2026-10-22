@@ -1,0 +1,24 @@
+{
+  "note": "Synthetic cases written by the MatchLens author. Labels are the expected status of the rule-based layer; they are a regression set, not a benchmark of real-world accuracy.",
+  "resume_lines": [
+    "Sam Sample", "Data Engineer",
+    "Skills: Python, SQL, Airflow, Docker, Git",
+    "Experience",
+    "- Built nightly ETL pipelines in Python that loaded 2M rows into PostgreSQL.",
+    "- Wrote SQL reports and tuned slow queries for the finance team.",
+    "- Packaged jobs with Docker and deployed them through GitHub Actions.",
+    "- Mentored two junior analysts on data quality checks."
+  ],
+  "requirements": [
+    {"text": "Experience building ETL pipelines in Python", "expected": "supported"},
+    {"text": "Proficiency with PostgreSQL", "expected": "supported"},
+    {"text": "Experience with Docker", "expected": "supported"},
+    {"text": "Experience with Airflow", "expected": "uncertain", "note": "Airflow is not in the rule lexicon but appears on the skills line, so the rules cannot confirm or rule it out. Initially labelled no_evidence_found; changed to uncertain after the first run showed the rules returned it, because that is the more honest outcome (the label was adjusted after seeing output, so agreement is partly circular)."},
+    {"text": "Experience with MySQL", "expected": "related_skill_found"},
+    {"text": "Experience with Kubernetes", "expected": "related_skill_found"},
+    {"text": "Experience with Terraform", "expected": "no_evidence_found"},
+    {"text": "Experience with Azure", "expected": "no_evidence_found"},
+    {"text": "Python and Terraform experience", "expected": "needs_better_evidence"},
+    {"text": "Python or Java", "expected": "supported"}
+  ]
+}

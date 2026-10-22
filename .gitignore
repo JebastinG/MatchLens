@@ -1,0 +1,20 @@
+# environments and secrets
+.venv/
+venv/
+.env
+*.env.local
+# runtime data (uploads, local DBs)
+backend/data/
+*.db
+# caches / build output
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+frontend/dist/
+*.egg-info/
+# model weights and benchmark output
+*.gguf
+*.safetensors
+model-tests/test_results/*.json
+.DS_Store
