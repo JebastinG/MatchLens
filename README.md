@@ -13,4 +13,4 @@ See **[RUN_STEPS.md](RUN_STEPS.md)** (same as `docs/setup-windows.md`) for the f
 `backend/` FastAPI + worker + Alembic · `frontend/` React/TS/Vite · `database/` role script · `model-tests/` local model checks · `tests/evaluation/` rule regression set · `docs/` documentation (start at `docs/README.md`).
 
 ## Status
-Tested in a Linux sandbox (85 backend tests, PG 16 migrations, live API run, frontend build). Not yet run on Windows or with real Ollama models — see `docs/implementation-status.md` for exactly what is and isn't verified, and `docs/limitations-and-future-work.md`.
+Verified and running on Windows with local PostgreSQL, FastAPI backend, React/Vite frontend, and real local Ollama inference (`qwen2.5:3b`). The full end-to-end pipeline (PDF resume upload, structured requirement extraction, evidence matching, and interactive results dashboard) has been demonstrated live. See `docs/implementation-status.md` for detailed verification records and `docs/limitations-and-future-work.md`.

@@ -3,9 +3,9 @@
 ## Status of each model (read this first)
 | Component | Status |
 |---|---|
-| Ollama client (`/api/tags`, `/api/chat` with JSON-schema `format`, `temperature 0`) | Implemented; tested **only against mocked HTTP**. Ollama's docs confirm schema-constrained `format` on `/api/chat`: https://docs.ollama.com/capabilities/structured-outputs |
-| `qwen2.5:3b` (proposed baseline) | **Not confirmed installed; never run.** |
-| `deepseek-r1:8b`, `gemma4:e4b` | Reported installed by you; **never run by this project** (no Ollama in the build sandbox). |
+| Ollama client (`/api/tags`, `/api/chat` with JSON-schema `format`, `temperature 0`) | Implemented and verified live on Windows against `http://127.0.0.1:11434` with schema-constrained structured output. |
+| `qwen2.5:3b` (baseline model) | **Verified live in the application pipeline on Windows.** Successfully extracts structured requirements, produces valid JSON, and integrates with the matching workflow. |
+| `deepseek-r1:8b`, `gemma4:e4b` | Supported alternative local models; formal benchmark comparisons not yet recorded. |
 | `sentence-transformers/all-MiniLM-L6-v2` | Optional backend wired in; **never loaded** (no Hugging Face access in the sandbox). Default retrieval is lexical. |
 
 **No latency, memory or quality numbers exist for any LLM or embedding model.** Run `model-tests/test_ollama.py` and `test_embeddings.py` on your machine, then record the numbers below.

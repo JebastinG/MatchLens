@@ -3,7 +3,7 @@
 Everything runs locally: PostgreSQL, the FastAPI backend (with its background worker), Ollama, and the React frontend.
 Use **four terminals** (database may be a service/container, so often three). Commands are for PowerShell.
 
-> **Honesty note.** This project was built and tested in a Linux sandbox (Python 3.12, PostgreSQL 16.2, Node 22), not on Windows, and without Ollama or internet access to job sites/GitHub. The Windows commands below follow standard tooling but were **not executed on Windows**. See `docs/implementation-status.md` for exactly what was verified.
+> **Verification note.** This project has been executed and verified live on Windows (PowerShell, PostgreSQL 16, FastAPI backend, React/Vite frontend, and local Ollama inference with `qwen2.5:3b`). See `docs/implementation-status.md` for exact test and environment details.
 
 ## 0. Prerequisites
 

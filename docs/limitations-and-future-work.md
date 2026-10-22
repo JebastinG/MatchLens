@@ -1,14 +1,14 @@
 # Limitations and future work
 
 ## Known limitations
-- Untested on Windows, with real Ollama models, MiniLM embeddings, real job sites, the live GitHub API, Docker Compose, or in a browser. See implementation-status.
+- Tested on Windows with local PostgreSQL, React/Vite UI in the browser, and real Ollama (`qwen2.5:3b`). Still unverified with alternate Ollama models (`deepseek-r1:8b`, `gemma4:e4b`), MiniLM embeddings, live internet job site/GitHub fetching, or Docker Compose. See `docs/implementation-status.md`.
 - No authentication/multi-user isolation; local single-user tool.
 - No OCR; scanned PDFs rejected. Multi-column/table PDFs may extract in odd order.
 - Rule layer knows ~50 skills; other requirements rely on retrieval + optional LLM.
 - Job URL support is static HTML + JSON-LD only; no JavaScript rendering.
 - No automatic data expiry; no retry of failed analyses without resubmission.
 - shadcn/Radix and MagicMouse not implemented; no charts (counts are shown as cards).
-- LLM quality, latency and memory unknown until measured.
+- LLM quality verified for `qwen2.5:3b`; latency and memory benchmarks for additional models remain to be recorded.
 
 ## Prioritised improvements
 1. Run and record real model benchmarks; calibrate retrieval thresholds; evaluate on consented real samples.
